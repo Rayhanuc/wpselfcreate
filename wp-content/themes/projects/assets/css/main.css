@@ -1,0 +1,185 @@
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+/* Heading font family */
+/* 
+
+font-family: 'Be Vietnam Pro', sans-serif;
+
+font-family: 'Prompt', sans-serif;
+font-family: 'Roboto', sans-serif;
+ */
+
+/* 
+Body font family
+
+font-family: 'Lato', sans-serif;
+font-family: 'Open Sans', sans-serif; 
+*/
+
+body {
+  font-family: "Lato", sans-serif;
+  /* font-family: 'Open Sans', sans-serif;  */
+  color: green;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  /* font-family: 'Be Vietnam Pro', sans-serif;
+
+font-family: 'Prompt', sans-serif; */
+  font-family: "Roboto", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #222;
+}
+
+p {
+  font-family: "Lato", sans-serif;
+}
+
+/* Top meuu area css start */
+
+.site-branding p {
+  display: none;
+}
+
+.main-navigation {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.site-branding a img {
+  height: 50px;
+  width: auto;
+}
+/* Top meuu area css end */
+
+/* Projects all togather page css start */
+
+.filter_menu ul {
+  display: flex;
+  flex-direction: row;
+  margin: 50px 0;
+  padding: 0;
+  list-style: none;
+  justify-content: center;
+}
+
+.filter_menu ul li {
+  padding: 6px;
+  cursor: pointer;
+  color: #22babf;
+  transition: 0.3s;
+}
+
+.filter_menu ul li.active {
+  font-weight: 700;
+}
+
+.filter_menu ul li:hover {
+  color: #2e888d;
+}
+
+.all_projects_page_heading h2 {
+  font-size: 50px;
+  margin: 50px 0;
+}
+
+.custom_post_taxonomy_area {
+  margin: 40px 0;
+}
+
+.single_project_text_content {
+  padding: 20px;
+  border: 1px solid #e6e6e6;
+  height: 150px;
+  border-radius: 0 0 8px 8px;
+}
+
+.single_project_post_content_area {
+  /* box-shadow: 1px 2px 3px 2px #5e5e5e2b; */
+  margin-bottom: 20px;
+}
+
+.project_image img {
+  border-radius: 8px 8px 0 0;
+}
+
+.project_title {
+  color: #2f2f2f;
+  border-bottom: 1px solid #44cdf759;
+  padding-bottom: 6px;
+  font-size: 19px;
+  font-weight: 400;
+}
+
+.categories_area ul {
+  margin: 0;
+  padding: 0;
+}
+.categories_area ul li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+}
+.categories_area ul li a {
+  color: #69aec1;
+  font-weight: 300;
+  font-size: 14px;
+  padding-left: 8px;
+  font-family: inherit;
+  transition: 0.3s;
+}
+.categories_area {
+  display: flex;
+  justify-content: end;
+}
+
+.custom_post_taxonomy_area ul {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: baseline;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.custom_post_taxonomy_area ul li a {
+  padding: 5px;
+  color: green;
+}
+
+.custom_post_taxonomy_area ul li a:active {
+  color: blue;
+}
+
+.filter_menu {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: space-around;
+}
+/* Projects all togather page css end */
+
+/* Footer site info area css start */
+
+.site-footer {
+  background: #efefef;
+  margin-top: 40px;
+}
+
+.site-info {
+  padding: 15px 0;
+  color: #7e7e7e;
+  font-size: 14px;
+}
+/* Footer site info area css end */

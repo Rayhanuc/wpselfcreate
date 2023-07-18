@@ -1,0 +1,24 @@
+	<?php
+	// echo apply_filters('bs_text','Hello World!');
+	// do_action('bs_before_title');
+	// echo "<h1>Hi! Welcome to Block scratch</h1>";
+	// do_action('bs_after_title');
+
+	// // bloginfo('name');
+	// // // bloginfo('url');
+
+	// // $title = get_bloginfo("name");
+	// // echo change_case($title);
+
+	// do_action('bs_before_post');
+	// while(have_posts()) {
+	// 	the_post();
+		
+	// 	echo "<h2>";
+	// 	the_title();
+	// 	echo "</h2>";
+		
+	// }
+	// do_action('bs_after_post');
+
+	?>
