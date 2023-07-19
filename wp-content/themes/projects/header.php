@@ -50,7 +50,7 @@
 					</div>
 
 					<div class="col-md-8">
-						<nav id="site-navigation" class="main-navigation">
+						<nav id="site-navigation" class="main-navigation top_nav_menu">
 							<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'projects' ); ?></button>
 							<?php
 							wp_nav_menu(

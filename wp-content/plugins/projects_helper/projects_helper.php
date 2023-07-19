@@ -161,14 +161,14 @@ function render_project_url_meta_box( $post ) {
   echo '<input type="text" id="project-url-field" name="project_url" value="' . esc_attr( $project_url ) . '" style="width: 100%;" />';
 }
 
-function render_additional_featured_image_meta_box( $post ) {
-  $additional_featured_image = get_post_meta( $post->ID, 'additional_featured_image', true );
+// function render_additional_featured_image_meta_box( $post ) {
+//   $additional_featured_image = get_post_meta( $post->ID, 'additional_featured_image', true );
 
-  echo '<label for="project-preview-images-field">';
-  echo 'Upload or enter the URLs for preview images:';
-  echo '</label><br />';
-  echo '<input type="text" id="project-preview-images-field" name="additional_featured_image" value="' . esc_attr( $additional_featured_image ) . '" style="width: 100%;" />';
-}
+//   echo '<label for="project-preview-images-field">';
+//   echo 'Upload or enter the URLs for preview images:';
+//   echo '</label><br />';
+//   echo '<input type="text" id="project-preview-images-field" name="additional_featured_image" value="' . esc_attr( $additional_featured_image ) . '" style="width: 100%;" />';
+// }
 
 
 function save_projects_meta( $post_id ) {
@@ -181,3 +181,35 @@ function save_projects_meta( $post_id ) {
   }
 }
 add_action( 'save_post_projects', 'save_projects_meta' );
+
+
+
+
+
+function render_additional_featured_image_meta_box( $post ) {
+  $additional_featured_images = get_post_meta( $post->ID, 'additional_featured_image', true );
+
+  echo '<label for="project-preview-images-field">';
+  echo 'Upload or enter the URLs for preview images:';
+  echo '</label><br />';
+  
+  // Add a button to open the WordPress media library
+  echo '<input type="button" id="project-preview-images-upload" class="button" value="Select Images">';
+  
+  // Display the selected images
+  if ( $additional_featured_images ) {
+    echo '<div id="project-preview-images-container">';
+    
+    foreach ( $additional_featured_images as $image ) {
+      echo '<div class="project-preview-image">';
+      echo '<img src="' . esc_url( $image ) . '" width="100" height="100" />';
+      echo '</div>';
+    }
+    
+    echo '</div>';
+  }
+  
+  // Hidden field to store the image URLs
+  echo '<input type="hidden" id="project-preview-images-field" name="additional_featured_image" value="' . esc_attr( implode( ',', $additional_featured_images ) ) . '" style="width: 100%;" />';
+}
+
