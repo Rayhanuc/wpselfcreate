@@ -1,0 +1,186 @@
+<?php
+/**
+ * The template for displaying archive pages
+ *
+ * @package Projects
+ * Template Name: Projects
+ */
+
+get_header();
+$projects_terms = get_terms(['taxonomy'=>'ptag']);
+?>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="all_projects_page_heading text-center">
+				<h2>All Projects</h2>
+				<?php
+
+		
+
+					?>
+					<!-- <div class="custom_post_taxonomy_area">
+						<ul class="project-filter">
+							<li data-filter="*" class="active">All</li>
+							<li data-filter=".agency">Agency</li>
+							<li data-filter=".design">Design</li>
+							<li data-filter=".app-design">App Design</li>
+							<li data-filter=".branding">Branding</li>
+						</ul> -->
+
+
+						<div class="filter_menu filter filter-button-group">
+							<ul>
+								<li data-filter="*" class="active">All</li>
+								<?php
+								// Only exist tag will show
+								foreach ($projects_terms as $projects_term) {
+						
+								?>
+										<li data-filter=".<?php echo $projects_term->slug;?>"><?php echo $projects_term->name;?></li>
+									<?php } ?>
+							</ul>
+
+							<div class="dropdown">
+								<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+									Dropdown button
+								</button>
+								<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+									<li><a class="dropdown-item" href="#">Action</a></li>
+									<li><a class="dropdown-item" href="#">Another action</a></li>
+									<li><a class="dropdown-item" href="#">Something else here</a></li>
+								</ul>
+							</div>
+						</div>
+						
+					</div>
+			</div>
+			<main id="primary" class="site-main">
+
+				<?php if ( have_posts() ) : ?>
+					<div class="projects_area">
+						<div class="row">
+						<?php
+							$args = array(
+								'post_type' => 'projects',
+								'posts_per_page' => 2,
+							);
+
+							$query = new 	WP_Query($args);
+						
+							while ( $query->have_posts() ) :
+								$query->the_post();
+
+								$termsArray = get_the_terms($post->ID, 'ptag');
+								$termsSlug = "";
+								?>
+									<div class="col-md-3 ">
+										
+
+
+
+										<div class="single_project_post_content_area">
+											<a href="<?php the_permalink(); ?>">
+												<div class="project_image">
+													<?php echo get_the_post_thumbnail(); ?>
+												</div>
+												
+												<div class="single_project_text_content">
+													<h2 class="project_title">
+														<?php echo get_the_title();?>
+													</h2>
+
+													<div class="categories_area">
+														<?php
+															// Only exist tag will show
+
+															// Check if categories exist
+																	// Loop through each category
+																	foreach ($projects_terms as $key => $projects_term) {
+																			// Display category name and link
+																			?>
+																				<div class="categorie">
+																					<ul>
+																						<li>
+																							<?php
+																							if (! taxonomy_exists($projects_term)) {
+																								echo '<a href="' . get_category_link($projects_term->term_id) . '">' . $projects_term->name . '</a><br>';
+																							}
+																							?>
+																						</li>
+																					</ul>
+																				</div>
+																			<?php
+																	}
+														?>
+													</div>
+													
+													
+												</div>
+											</a>
+										</div>
+										
+									</div>
+
+								<?php
+							endwhile;
+					
+						?>
+						</div>
+					</div>
+
+				<?php endif; ?>
+			</main><!-- #main -->
+
+		</div>
+	</div>
+</div>
+
+<script>
+	jQuery(document).ready(function($) {
+    // // Initialize Isotope
+    // var $grid = $('.projects_area .row').isotope({
+    //     itemSelector: '.single_project_post_content_area',
+    //     layoutMode: 'fitRows'
+    // });
+
+    // // Filter items on button click
+    // $('.filter_menu ul li').on('click', function() {
+    //     var filterValue = $(this).attr('data-filter');
+    //     $grid.isotope({ 
+		// 			filter: filterValue,
+		// 			layoutMode: 'masonry',
+		// 		masonry: {
+		// 			columnWidth: '.col-md-3',
+		// 			horizontalOrder: false
+		// 		} 
+		// 		});
+
+    //     // Toggle active class on the clicked filter item
+    //     $(this).addClass('active').siblings().removeClass('active');
+    // });
+
+		$(".project-filter li").on('click', function() {
+		$(".project-filter li").removeClass("active");
+		$(this).addClass("active");
+
+		var filterValue = $(this).attr("data-filter");
+
+		$(".project-list").isotope({
+			filter: filterValue,
+			layoutMode: 'masonry',
+			masonry: {
+				columnWidth: '.col-md-3',
+				horizontalOrder: false
+			}
+		});
+	});
+
+
+	});
+</script>
+
+<?php
+// get_sidebar();
+get_footer();

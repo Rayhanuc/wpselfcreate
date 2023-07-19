@@ -1,0 +1,286 @@
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+/* Heading font family */
+/* 
+
+font-family: 'Be Vietnam Pro', sans-serif;
+
+font-family: 'Prompt', sans-serif;
+font-family: 'Roboto', sans-serif;
+ */
+
+/* 
+Body font family
+
+font-family: 'Lato', sans-serif;
+font-family: 'Open Sans', sans-serif; 
+*/
+
+/* 
+
+Brand color:
+Main brand color: #61be85
+Dark brand color: #20472c
+Light brand color: #60be84
+
+ */
+
+body {
+  font-family: "Lato", sans-serif;
+  /* font-family: 'Open Sans', sans-serif;  */
+  color: green;
+
+  font-size: 13px;
+  font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  /* font-family: 'Be Vietnam Pro', sans-serif;
+
+font-family: 'Prompt', sans-serif; */
+  font-family: "Roboto", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #222;
+}
+
+p {
+  font-family: "Lato", sans-serif;
+}
+
+/* Top meuu area css start */
+
+.site-branding p {
+  display: none;
+}
+
+.top_nav_menu_area {
+  margin: 10px 0;
+}
+
+.main-navigation {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.site-branding a img {
+  height: 50px;
+  width: auto;
+}
+
+.top_nav_menu ul li {
+  padding: 10px 0;
+}
+
+.top_nav_menu ul li a {
+  color: #20472d;
+  transition: 0.3s;
+}
+
+.top_nav_menu ul li a:hover {
+  color: #66ca8c;
+}
+
+/* Top meuu area css end */
+
+/* Projects all togather page css start */
+
+.sorting_options {
+  color: #3a6f4e;
+}
+
+.filter_menu ul {
+  display: flex;
+  flex-direction: row;
+  margin: 50px 0;
+  padding: 0;
+  list-style: none;
+  justify-content: center;
+}
+
+.filter_menu ul li {
+  padding: 8px;
+  cursor: pointer;
+  color: #61be85;
+  transition: 0.3s;
+}
+
+.filter_menu ul li.active {
+  font-weight: 700;
+  border-bottom: 2px solid;
+}
+
+.filter_menu ul li:hover {
+  color: #2e888d;
+}
+
+.all_projects_page_heading h2 {
+  font-size: 50px;
+  margin: 50px 0;
+  color: #20472c;
+}
+
+.custom_post_taxonomy_area {
+  margin: 40px 0;
+}
+
+.single_project_text_content {
+  padding: 20px;
+  border: 1px solid #e6e6e6;
+  height: 150px;
+  border-radius: 0 0 8px 8px;
+}
+
+.single_project_post_content_area {
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.project_image img {
+  border-radius: 8px 8px 0 0;
+  height: 170px;
+}
+
+.project_title {
+  color: #20472d;
+  border-bottom: 1px solid #38754c;
+  padding-bottom: 6px;
+  font-size: 19px;
+  font-weight: 400;
+}
+
+.categories_area ul {
+  margin: 0;
+  padding: 0;
+}
+.categories_area ul li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+}
+.categories_area ul li a {
+  color: #5db984;
+  font-weight: 300;
+  font-size: 14px;
+  padding-left: 8px;
+  font-family: inherit;
+  transition: 0.3s;
+}
+.categories_area {
+  display: flex;
+  justify-content: end;
+}
+
+.custom_post_taxonomy_area ul {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: baseline;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.custom_post_taxonomy_area ul li a {
+  padding: 5px;
+  color: green;
+}
+
+.custom_post_taxonomy_area ul li a:active {
+  color: blue;
+}
+
+.filter_menu {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: space-around;
+}
+/* Projects all togather page css end */
+
+/* Modal hover popup dialog box css start */
+
+.single_project_post_content_area_modal_body .single_project_text_content {
+  background: #6fba8c;
+  border-top: none;
+  color: white;
+  height: 400px;
+}
+
+.single_project_post_content_area_modal_body
+  .single_project_text_content
+  .project_title {
+  color: #fff;
+  border-bottom: 1px solid #fff;
+}
+
+.single_project_post_content_area_modal_body
+  .single_project_text_content
+  .project_description {
+  font-size: 14px;
+}
+
+.single_project_post_content_area_modal_body.modal-body
+  .categories_area
+  ul
+  li
+  a {
+  color: #20472c;
+}
+
+.single_project_post_content_area_modal_body.modal-body
+  .single_project_text_content
+  .external_url
+  span {
+  font-size: 13px;
+  color: #2e2e2e;
+  margin-left: 6px;
+}
+
+.single_project_post_content_area_modal_body.modal-body .project_image img {
+  height: 160px;
+}
+
+.additional-featured-images {
+  display: flex;
+  flex-flow: wrap;
+}
+
+.additional-featured-images img {
+  width: 106px;
+}
+/* Modal hover popup dialog box css end */
+
+/* Footer site info area css start */
+
+.site-footer {
+  background: #f0fef5;
+  margin-top: 40px;
+}
+
+.site-info {
+  padding: 15px 0;
+  color: #7e7e7e;
+  font-size: 14px;
+}
+
+.site-info a,
+.site-info a:visited {
+  color: #20472d;
+  transition: 0.3s;
+  font-size: 12px;
+}
+
+.site-info a:hover {
+  color: #2a924d;
+}
+/* Footer site info area css end */
