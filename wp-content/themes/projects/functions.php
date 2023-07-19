@@ -6,6 +6,8 @@
  * @package Projects
  */
 
+ require_once get_theme_file_path( '/inc/tgm.php' );
+ 
 if ( ! defined( '_S_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
 	define( '_S_VERSION', '1.0.0' );
